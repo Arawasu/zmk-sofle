@@ -61,8 +61,8 @@
         &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp ENTER
 
         // Row 5 (Thumb cluster)
-        &kp C_MUTE &kp SPACE &kp LEFT_GUI &kp LEFT_ALT &kp LCTRL &kp RS(RA(RC(RIGHT_GUI)))
-        &kp ENTER &kp SPACE &kp RIGHT_SHIFT &mo 1 &kp RCTRL &kp DELETE
+        &kp C_MUTE &kp LEFT_GUI &kp LEFT_ALT &kp LCTRL &kp ENTER &kp RS(RA(RC(RIGHT_GUI)))
+        &kp ENTER &kp ENTER &kp ENTER &mo 1 &kp RCTRL &kp DELETE
       >;
       sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
       display-name = "ZERO";
@@ -76,11 +76,11 @@
 
         // Row 2
         &trans &kp PG_DN &kp UP &kp PG_UP &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &kp UNDER &kp PLUS
 
         // Row 3
         &trans &kp LEFT &kp DOWN &kp RIGHT &trans &trans &trans
-        &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &kp LBRC &kp RBRC
 
         // Row 4
         &trans &rgb_ug RGB_OFF &rgb_ug RGB_ON &rgb_ug RGB_EFF &rgb_ug RGB_EFR &rgb_ug RGB_SPI
@@ -102,15 +102,15 @@
 
         // Row 2
         &trans &bt BT_CLR &bt BT_CLR_ALL &trans &trans &trans &mmv MOVE_DOWN
-        &trans &trans &kp F11 &kp F12 &kp UNDER &kp PLUS
+        &trans &trans &kp F11 &kp F12 &trans &trans
 
         // Row 3
         &trans &out OUT_USB &out OUT_BLE &trans &trans &trans &mmv MOVE_LEFT
-        &trans &trans &trans &trans &kp LBRC &kp RBRC
+        &trans &trans &trans &trans &trans &trans
 
         // Row 4
-        &trans &sys_reset &trans &bootloader &trans &trans &mmv MOVE_RIGHT
-        &trans &trans &sys_reset &soft_off &bootloader &trans
+        &trans &trans &trans &bootloader &trans &trans &mmv MOVE_RIGHT
+        &trans &trans &trans &trans &bootloader &trans
 
         // Row 5
         &trans &trans &trans &trans &trans &trans &mkp LCLK
