@@ -113,7 +113,7 @@
         &trans &trans &trans &to 0 &to 1 &trans
 
         // Row 5
-        &trans &trans &trans &trans &trans &trans &mkp LCLK
+        &trans &trans &trans &trans &trans &mkp LCLK
         &trans &trans &trans &trans &trans &trans
       >;
       display-name = "TWO";
