@@ -39,13 +39,6 @@
     tap-ms = <100>;
   };
 
-  my_hyper: my_hyper {
-    compatible = "zmk,behavior-mod-momentary";
-    #binding-cells = <0>;
-    bindings = <(MOD_LCTL|MOD_LALT|MOD_LSFT|MOD_LGUI)>;
-    };
-
-
   keymap {
     compatible = "zmk,keymap";
 
@@ -68,7 +61,7 @@
         &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp ENTER
 
         // Row 5 (Thumb cluster)
-        &kp C_MUTE &kp SPACE &kp LEFT_GUI &kp LEFT_ALT &kp LCTRL &my_hyper
+        &kp C_MUTE &kp SPACE &kp LEFT_GUI &kp LEFT_ALT &kp LCTRL &kp RS(RA(RC(RIGHT_GUI)))
         &kp ENTER &kp SPACE &kp RIGHT_SHIFT &mo 1 &kp RCTRL &kp DELETE
       >;
       sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
