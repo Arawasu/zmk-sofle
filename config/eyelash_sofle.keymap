@@ -84,11 +84,11 @@
 
         // Row 4
         &trans &rgb_ug RGB_OFF &rgb_ug RGB_ON &rgb_ug RGB_EFF &rgb_ug RGB_EFR &rgb_ug RGB_SPI
-        &mmv MOVE_RIGHT &rgb_ug RGB_BRI &rgb_ug RGB_BRD &kp INSERT &to 0 &to 1 &to 2
+        &mmv MOVE_RIGHT &rgb_ug RGB_BRI &rgb_ug RGB_BRD &kp INSERT &to 0 &trans &to 2
 
         // Row 5
         &kp C_MUTE &trans &trans &trans &trans &trans
-        &trans &trans &trans &mo 1 &trans &trans
+        &trans &trans &trans &trans &trans &trans
       >;
       display-name = "ONE";
       sensor-bindings = <&scroll_encoder>;
@@ -110,11 +110,11 @@
 
         // Row 4
         &trans &trans &trans &trans &trans &trans &mmv MOVE_RIGHT
-        &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans &to 0 &to 1 &trans
 
         // Row 5
         &trans &trans &trans &trans &trans &trans &mkp LCLK
-        &trans &trans &trans & mo 1 &trans
+        &trans &trans &trans &trans &trans &trans
       >;
       display-name = "TWO";
       sensor-bindings = <&scroll_encoder>;
