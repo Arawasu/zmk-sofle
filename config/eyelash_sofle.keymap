@@ -35,9 +35,25 @@
         tap-ms = <100>;
     };
 
-    hyper: hyper {
-        compatible = "zmk,behavior-mod-momentary";
+    hyper_mod: hyper_mod {
+        compatible = "zmk,behavior-mod-tap";
+        #binding-cells = <0>;
+        label = "HYPER_MOD";
+        /* 
+         * This bitmask sets which modifiers get held.
+         * Pressing &hyper_mod means “hold Ctrl+Alt+Shift+GUI.” 
+         */
         bindings = <(MOD_LCTL | MOD_LALT | MOD_LSFT | MOD_LGUI)>;
+
+        /* 
+         * Tapping-term settings let you decide how quickly 
+         * it decides “tap vs hold.” 
+         * If you want strictly “only hold,” set them to zero, 
+         * so a quick tap does effectively nothing.
+         */
+        tapping-term-ms = <0>;
+        quick-tap-ms = <0>;
+        flavor = "balanced";
     };
 
     keymap {
@@ -61,7 +77,7 @@
                 &kp LSHFT    &kp Z         &kp X         &kp C         &kp V        &kp B         &kp RIGHT_ARROW &kp N        &kp M      &kp COMMA      &kp DOT         &kp FSLH       &kp ENTER
 
                 /* Row 5 (thumb cluster, etc.) */
-                &kp C_MUTE   &kp SPACE    &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL    &hyper      &kp ENTER      &kp SPACE     &kp RIGHT_SHIFT &mo 1       &kp RCTRL       &kp DELETE
+                &kp C_MUTE   &kp SPACE    &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL    &hyper_mod      &kp ENTER      &kp SPACE     &kp RIGHT_SHIFT &mo 1       &kp RCTRL       &kp DELETE
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             display-name = "ZERO";
@@ -120,7 +136,5 @@
             display-name = "TWO";
             sensor-bindings = <&scroll_encoder>;
         };
-
-        /* layer_3 was removed, since we only need three layers */
     };
 };
