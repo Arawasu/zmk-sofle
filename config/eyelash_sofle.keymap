@@ -11,109 +11,113 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/outputs.h>
 
-&mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
+&mmv_input_listener {
+  input-processors = <&zip_xy_scaler 2 1>;
+};
 
-&msc_input_listener { input-processors = <&zip_scroll_scaler 2 1>; };
+&msc_input_listener {
+  input-processors = <&zip_scroll_scaler 2 1>;
+};
 
 &msc {
-    acceleration-exponent = <1>;      // 0
-    time-to-max-speed-ms = <100>;       // 300
-    delay-ms = <0>;                   // 0
+  acceleration-exponent = <1>;
+  time-to-max-speed-ms = <100>;
+  delay-ms = <0>;
 };
 
 &mmv {
-    time-to-max-speed-ms = <500>;
-    acceleration-exponent = <1>;
-    trigger-period-ms = <16>;
+  time-to-max-speed-ms = <500>;
+  acceleration-exponent = <1>;
+  trigger-period-ms = <16>;
 };
 
 / {
-    scroll_encoder: scroll_encoder {
-        compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-        tap-ms = <100>;
+  scroll_encoder: scroll_encoder {
+    compatible = "zmk,behavior-sensor-rotate";
+    #sensor-binding-cells = <0>;
+    bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+    tap-ms = <100>;
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    layer_ZERO {
+      bindings = <
+        // Row 1
+        &kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp UP_ARROW
+        &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BACKSPACE
+
+        // Row 2
+        &kp TAB &kp Q &kp W &kp E &kp R &kp T &kp DOWN_ARROW
+        &kp Y &kp U &kp I &kp O &kp P &kp BSLH
+
+        // Row 3
+        &kp CAPS &kp A &kp S &kp D &kp F &kp G &kp LEFT_ARROW
+        &kp H &kp J &kp K &kp L &kp SEMI &kp APOS
+
+        // Row 4
+        &kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp RIGHT_ARROW
+        &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp ENTER
+
+        // Row 5 (Thumb cluster)
+        &kp C_MUTE &kp SPACE &kp LEFT_GUI &kp LEFT_ALT &kp LCTRL &mt 15 &kp NO
+        &kp ENTER &kp SPACE &kp RIGHT_SHIFT &mo 1 &kp RCTRL &kp DELETE
+      >;
+      sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+      display-name = "ZERO";
     };
 
-    keymap {
-        compatible = "zmk,keymap";
+    layer_ONE {
+      bindings = <
+        // Row 1
+        &kp GRAVE &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &mmv MOVE_UP
+        &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F12
 
-        /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         * LAYER ZERO (was layer0)
-         * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-        layer_ZERO {
-            bindings = <
-                /* Row 1 */
-                &kp ESC      &kp N1        &kp N2        &kp N3        &kp N4       &kp N5        &kp UP_ARROW   &kp N6        &kp N7     &kp N8         &kp N9          &kp N0         &kp BACKSPACE
+        // Row 2
+        &trans &kp PG_DN &kp UP &kp PG_UP &trans &trans &trans
+        &trans &trans &trans &trans &trans &trans
 
-                /* Row 2 */
-                &kp TAB      &kp Q         &kp W         &kp E         &kp R        &kp T         &kp DOWN_ARROW &kp Y         &kp U      &kp I          &kp O           &kp P          &kp BSLH
+        // Row 3
+        &trans &kp LEFT &kp DOWN &kp RIGHT &trans &trans &trans
+        &trans &trans &trans &trans &trans &trans
 
-                /* Row 3 */
-                &kp CAPS     &kp A         &kp S         &kp D         &kp F        &kp G         &kp LEFT_ARROW &kp H         &kp J      &kp K          &kp L           &kp SEMI       &kp APOS
+        // Row 4
+        &trans &rgb_ug RGB_OFF &rgb_ug RGB_ON &rgb_ug RGB_EFF &rgb_ug RGB_EFR &rgb_ug RGB_SPI
+        &mmv MOVE_RIGHT &rgb_ug RGB_BRI &rgb_ug RGB_BRD &kp INSERT &tog 0 &tog 1 &tog 2
 
-                /* Row 4 */
-                &kp LSHFT    &kp Z         &kp X         &kp C         &kp V        &kp B         &kp RIGHT_ARROW &kp N        &kp M      &kp COMMA      &kp DOT         &kp FSLH       &kp ENTER
-
-                /* Row 5 (thumb cluster, etc.) */
-                &kp C_MUTE   &kp SPACE    &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL    &mt 15 &kp NO      &kp ENTER      &kp SPACE     &kp RIGHT_SHIFT &mo 1       &kp RCTRL       &kp DELETE
-            >;
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
-            display-name = "ZERO";
-        };
-
-        /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         * LAYER ONE (was layer_1)
-         * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-        layer_ONE {
-            bindings = <
-                /* Row 1 */
-                &kp GRAVE   &kp F1      &kp F2       &kp F3       &kp F4       &kp F5       &mmv MOVE_UP   &kp F6     &kp F7     &kp F8     &kp F9     &kp F10    &kp F12
-
-                /* Row 2 (put arrow keys where W was, plus PgDn/PgUp, remove old mouse stuff) */
-                &trans      &kp PG_DN   &kp UP       &kp PG_UP    &trans       &trans       &trans        &trans     &trans     &trans     &trans     &trans     &trans
-
-                /* Row 3 (arrow keys for A,S,D, remove old mouse) */
-                &trans      &kp LEFT    &kp DOWN     &kp RIGHT    &trans       &trans       &trans        &trans     &trans     &trans     &trans     &trans     &trans
-
-                /* Row 4 (RGB stuff is optional; we’ll keep it, but change F11->tog0, F12->tog1, etc.) */
-                &trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI \
-                &mmv MOVE_RIGHT           &rgb_ug RGB_BRI   &rgb_ug RGB_BRD   &kp INSERT       &tog 0          &tog 1          &tog 2
-
-                /* Row 5 (if needed; you can keep or remove) */
-                &kp C_MUTE  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-            display-name = "ONE";
-            sensor-bindings = <&scroll_encoder>;
-        };
-
-        /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-         * LAYER TWO (was layer_2)
-         * ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-        layer_TWO {
-            bindings = <
-                /* Row 1 */
-                &kp TILDE   &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &mmv MOVE_UP \
-                &kp F6      &kp F7       &kp F8         &kp F9        &kp F10       &trans
-
-                /* Row 2 */
-                &trans      &bt BT_CLR    &bt BT_CLR_ALL &trans        &trans        &trans        &mmv MOVE_DOWN \
-                &trans      &trans       &kp F11        &kp F12       &kp UNDER     &kp PLUS
-
-                /* Row 3 */
-                &trans      &out OUT_USB  &out OUT_BLE   &trans        &trans        &trans        &mmv MOVE_LEFT \
-                &trans      &trans       &trans         &trans        &kp LBRC      &kp RBRC
-
-                /* Row 4 */
-                &trans      &sys_reset    &trans         &bootloader   &trans        &trans        &mmv MOVE_RIGHT \
-                &trans      &trans       &sys_reset     &soft_off     &bootloader   &trans
-
-                /* Row 5 */
-                &trans      &trans        &trans         &trans        &trans        &trans        &mkp LCLK \
-                &trans      &trans       &trans         &trans        &trans
-            >;
-            display-name = "TWO";
-            sensor-bindings = <&scroll_encoder>;
-        };
+        // Row 5
+        &kp C_MUTE &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &trans &trans
+      >;
+      display-name = "ONE";
+      sensor-bindings = <&scroll_encoder>;
     };
+
+    layer_TWO {
+      bindings = <
+        // Row 1
+        &kp TILDE &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &mmv MOVE_UP
+        &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &trans
+
+        // Row 2
+        &trans &bt BT_CLR &bt BT_CLR_ALL &trans &trans &trans &mmv MOVE_DOWN
+        &trans &trans &kp F11 &kp F12 &kp UNDER &kp PLUS
+
+        // Row 3
+        &trans &out OUT_USB &out OUT_BLE &trans &trans &trans &mmv MOVE_LEFT
+        &trans &trans &trans &trans &kp LBRC &kp RBRC
+
+        // Row 4
+        &trans &sys_reset &trans &bootloader &trans &trans &mmv MOVE_RIGHT
+        &trans &trans &sys_reset &soft_off &bootloader &trans
+
+        // Row 5
+        &trans &trans &trans &trans &trans &trans &mkp LCLK
+        &trans &trans &trans &trans &trans
+      >;
+      display-name = "TWO";
+      sensor-bindings = <&scroll_encoder>;
+    };
+  };
 };
