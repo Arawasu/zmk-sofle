@@ -109,8 +109,8 @@
         &trans &trans &trans &trans &trans &trans
 
         // Row 4
-        &trans &trans &trans &bootloader &trans &trans &mmv MOVE_RIGHT
-        &trans &trans &trans &trans &bootloader &trans
+        &trans &trans &trans &trans &trans &trans &mmv MOVE_RIGHT
+        &trans &trans &trans &trans &trans &trans
 
         // Row 5
         &trans &trans &trans &trans &trans &trans &mkp LCLK
