@@ -41,11 +41,11 @@
 
     behaviors {
         to_1_tap: behavior_to_1_tap {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <0>;
-        tapping-term-ms = <200>;
-        flavor = "tap-preferred";
-        bindings = <&to 1 &trans>;
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&to (1) &trans>;
         };
     };
 
