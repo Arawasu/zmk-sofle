@@ -71,7 +71,7 @@
                 &kp LSHFT    &kp Z         &kp X         &kp C         &kp V        &kp B         &kp RIGHT_ARROW &kp N        &kp M      &kp COMMA      &kp DOT         &kp FSLH       &kp ENTER
 
                 /* Row 5 (thumb cluster, etc.) */
-                &kp C_MUTE   &kp SPACE    &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL    &my_hyper (MOD_LCTL | MOD_LALT | MOD_LSFT | MOD_LGUI) &kp NO      &kp ENTER      &kp SPACE     &kp RIGHT_SHIFT &mo 1       &kp RCTRL       &kp DELETE
+                &kp C_MUTE   &kp SPACE    &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL    &my_hyper (MOD_LCTL|MOD_LALT|MOD_LSFT|MOD_LGUI) &kp NO      &kp ENTER      &kp SPACE     &kp RIGHT_SHIFT &mo 1       &kp RCTRL       &kp DELETE
             >;
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
             display-name = "ZERO";
