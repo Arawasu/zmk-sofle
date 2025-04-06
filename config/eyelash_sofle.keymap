@@ -20,24 +20,24 @@
         rgb_esc_purple: rgb_esc_purple {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            /* Esc, set solid color mode, then pastel purple HSV 275 50 60 */
-            bindings = <&kp ESC &rgb_ug RGB_SLD &rgb_ug RGB_HSV 275 50 60>;
+            /* ESC + solid mode (color must be set elsewhere) */
+            bindings = <&kp ESC &rgb_ug RGB_SLD>;
         };
 
         /* Pastel blue */
         rgb_esc_blue: rgb_esc_blue {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            /* Esc, set solid color mode, then pastel blue HSV 210 50 60 */
-            bindings = <&kp ESC &rgb_ug RGB_SLD &rgb_ug RGB_HSV 210 50 60>;
+            /* ESC + solid mode (color must be set elsewhere) */
+            bindings = <&kp ESC &rgb_ug RGB_SLD>;
         };
 
         /* Pastel red */
         rgb_esc_red: rgb_esc_red {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            /* Esc, set solid color mode, then pastel red HSV0 50 60 */
-            bindings = <&kp ESC &rgb_ug RGB_SLD &rgb_ug RGB_HSV 0 50 60>;
+            /* ESC + solid mode (color must be set elsewhere) */
+            bindings = <&kp ESC &rgb_ug RGB_SLD>;
         };
 
         /* hold-tap for mo1 */
