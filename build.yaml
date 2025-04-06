@@ -1,8 +1,4 @@
 ---
-modules:
-  - name: zmk-nice-oled
-    path: modules/zmk-nice-oled
-
 include:
   - board: eyelash_sofle_left
     shield: nice_view_adapter nice_epaper
