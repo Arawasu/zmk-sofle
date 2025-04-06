@@ -15,38 +15,30 @@
     /* ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
        ┃ Macro Behaviors for ESC + Pastel Colors             ┃
        ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ */
-    behaviors {
-        /* Pastel purple */
+    ehaviors {
         rgb_esc_purple: rgb_esc_purple {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            /* ESC + solid mode (color must be set elsewhere) */
-            bindings = <&kp ESC &rgb_sld>;
+            bindings = <&kp ESC &rgb_ug RGB_SLD &rgb_ug RGB_HSV 275 50 60>;
         };
 
-        /* Pastel blue */
         rgb_esc_blue: rgb_esc_blue {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            /* ESC + solid mode (color must be set elsewhere) */
-            bindings = <&kp ESC &rgb_sld>;
+            bindings = <&kp ESC &rgb_ug RGB_SLD &rgb_ug RGB_HSV 210 50 60>;
         };
 
-        /* Pastel red */
         rgb_esc_red: rgb_esc_red {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            /* ESC + solid mode (color must be set elsewhere) */
-            bindings = <&kp ESC &rgb_sld>;
+            bindings = <&kp ESC &rgb_ug RGB_SLD &rgb_ug RGB_HSV 0 50 60>;
         };
 
-        /* hold-tap for mo1 */
         hold_mo_1: hold_mo_1 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            /* hold is mo1, tap is nothing */
             bindings = <&mo 1 &trans>;
         };
     };
