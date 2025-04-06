@@ -12,41 +12,41 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-    // ┃ Macro Behaviors for ESC + Pastel Colors             ┃
-    // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+    /* ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+       ┃ Macro Behaviors for ESC + Pastel Colors             ┃
+       ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ */
     behaviors {
-        // Pastel purple
+        /* Pastel purple */
         rgb_esc_purple: rgb_esc_purple {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            // Esc, set solid color mode, then pastel purple HSV 275 50 60
+            /* Esc, set solid color mode, then pastel purple HSV 275 50 60 */
             bindings = <&kp ESC &rgb_ug RGB_SLD &rgb_ug RGB_HSV 275 50 60>;
         };
 
-        // Pastel blue
+        /* Pastel blue */
         rgb_esc_blue: rgb_esc_blue {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            // Esc, set solid color mode, then pastel blue HSV 210 50 60
+            /* Esc, set solid color mode, then pastel blue HSV 210 50 60 */
             bindings = <&kp ESC &rgb_ug RGB_SLD &rgb_ug RGB_HSV 210 50 60>;
         };
 
-        // Pastel red
+        /* Pastel red */
         rgb_esc_red: rgb_esc_red {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            // Esc, set solid color mode, then pastel red HSV0 50 60
+            /* Esc, set solid color mode, then pastel red HSV0 50 60 */
             bindings = <&kp ESC &rgb_ug RGB_SLD &rgb_ug RGB_HSV 0 50 60>;
         };
 
-        // hold-tap for mo1
+        /* hold-tap for mo1 */
         hold_mo_1: hold_mo_1 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            // hold is mo1, tap is nothing
+            /* hold is mo1, tap is nothing */
             bindings = <&mo 1 &trans>;
         };
     };
@@ -85,28 +85,28 @@
   keymap {
     compatible = "zmk,keymap";
 
-    // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-    // ┃ BASE layer_ZERO                      ┃
-    // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+    /* ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+       ┃ BASE layer_ZERO                      ┃
+       ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ */
     layer_ZERO {
       bindings = <
-        // Row 1
+        /* Row 1 */
         &kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp UP_ARROW
         &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BACKSPACE
 
-        // Row 2
+        /* Row 2 */
         &kp TAB &kp Q &kp W &kp E &kp R &kp T &kp DOWN_ARROW
         &kp Y &kp U &kp I &kp O &kp P &kp BSLH
 
-        // Row 3
+        /* Row 3 */
         &kp CAPS &kp A &kp S &kp D &kp F &kp G &kp LEFT_ARROW
         &kp H &kp J &kp K &kp L &kp SEMI &kp APOS
 
-        // Row 4
+        /* Row 4 */
         &kp LSHFT &kp Z &kp X &kp C &kp V &kp B &kp RIGHT_ARROW
         &kp N &kp M &kp COMMA &kp DOT &kp FSLH &kp ENTER
 
-        // Row 5 (Thumb cluster)
+        /* Row 5 */
         &kp C_MUTE &kp LEFT_GUI &kp LEFT_ALT &kp LCTRL &kp ENTER &kp RS(RA(RC(RIGHT_GUI)))
         &kp ENTER &kp ENTER &kp ENTER &mo 1 &kp RCTRL &kp DELETE
       >;
@@ -114,28 +114,28 @@
       display-name = "BASE";
     };
 
-    // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-    // ┃ NAV layer_ONE -> Pastel Purple ESC   ┃
-    // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+    /* ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+       ┃ NAV layer_ONE -> Pastel Purple ESC   ┃
+       ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ */
     layer_ONE {
       bindings = <
-        // Row 1
+        /* Row 1 */
         &rgb_esc_purple &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &mmv MOVE_UP
         &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F12
 
-        // Row 2
+        /* Row 2 */
         &trans &kp PG_DN &kp UP &kp PG_UP &trans &trans &trans
         &trans &trans &trans &trans &kp UNDER &kp PLUS
 
-        // Row 3
+        /* Row 3 */
         &trans &kp LEFT &kp DOWN &kp RIGHT &trans &trans &trans
         &trans &trans &trans &trans &kp LBRC &kp RBRC
 
-        // Row 4
+        /* Row 4 */
         &trans &rgb_ug RGB_OFF &rgb_ug RGB_ON &rgb_ug RGB_EFF &rgb_ug RGB_EFR &rgb_ug RGB_SPI
         &mmv MOVE_RIGHT &rgb_ug RGB_BRI &rgb_ug RGB_BRD &kp INSERT &to 0 &to 1 &to 2
 
-        // Row 5
+        /* Row 5 */
         &kp C_MUTE &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans
       >;
@@ -143,28 +143,28 @@
       display-name = "NAV";
     };
 
-    // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-    // ┃ ONE layer_TWO -> Pastel Blue ESC     ┃
-    // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+    /* ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+       ┃ ONE layer_TWO -> Pastel Blue ESC     ┃
+       ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ */
     layer_TWO {
       bindings = <
-        // Row 1
+        /* Row 1 */
         &rgb_esc_blue &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &mmv MOVE_UP
         &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &trans
 
-        // Row 2
+        /* Row 2 */
         &trans &bt BT_CLR &bt BT_CLR_ALL &trans &trans &trans &mmv MOVE_DOWN
         &trans &trans &kp F11 &kp F12 &trans &trans
 
-        // Row 3
+        /* Row 3 */
         &trans &out OUT_USB &out OUT_BLE &trans &trans &trans &mmv MOVE_LEFT
         &trans &trans &trans &trans &trans &trans
 
-        // Row 4
+        /* Row 4 */
         &trans &trans &trans &trans &trans &trans &mmv MOVE_RIGHT
         &trans &trans &trans &to 0 &to 1 &trans
 
-        // Row 5
+        /* Row 5 */
         &trans &trans &trans &trans &trans &mkp LCLK
         &trans &trans &trans &trans &trans &trans
       >;
@@ -172,28 +172,28 @@
       display-name = "ONE";
     };
 
-    // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-    // ┃ TWO layer_THREE -> Pastel Red ESC    ┃
-    // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+    /* ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+       ┃ TWO layer_THREE -> Pastel Red ESC    ┃
+       ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛ */
     layer_THREE {
       bindings = <
-        // row 1
+        /* Row 1 */
         &rgb_esc_red &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &mmv MOVE_UP
         &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &trans
 
-        // Row 2
+        /* Row 2 */
         &trans &bt BT_CLR &bt BT_CLR_ALL &trans &trans &trans &mmv MOVE_DOWN
         &trans &trans &kp F11 &kp F12 &trans &trans
 
-        // Row 3
+        /* Row 3 */
         &trans &out OUT_USB &out OUT_BLE &trans &trans &trans &mmv MOVE_LEFT
         &trans &trans &trans &trans &trans &trans
 
-        // Row 4
+        /* Row 4 */
         &trans &trans &trans &trans &trans &trans &mmv MOVE_RIGHT
         &trans &trans &trans &to 0 &to 1 &trans
 
-        // Row 5
+        /* Row 5 */
         &trans &trans &trans &trans &trans &mkp LCLK
         &trans &trans &trans &trans &trans &trans
       >;
