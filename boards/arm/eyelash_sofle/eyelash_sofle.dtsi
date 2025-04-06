@@ -22,7 +22,7 @@
         zephyr,flash = &flash0;
         zmk,kscan = &kscan0;
         zmk,battery = &vbatt;
-        zmk,underglow = &led_strip;
+        zmk,rgb-per-key = &led_strip;
         zmk,physical-layout = &eyelash_sofle_layout;
         zmk,backlight = &backlight;
     };
@@ -207,7 +207,7 @@
         spi-max-frequency = <4000000>;
 
         /* WS2812 */
-        chain-length = <7>; /* 6 keys have underglow at the moment */
+        chain-length = <35>; /* 6 keys have underglow at the moment */
         spi-one-frame = <0x70>;
         spi-zero-frame = <0x40>;
 
