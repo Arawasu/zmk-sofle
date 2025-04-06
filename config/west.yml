@@ -6,9 +6,9 @@ manifest:
     - name: gpeye
       url-base: https://github.com/GPeye
 
-    # left-side widgets
     - name: mctechnology17
       url-base: https://github.com/mctechnology17
+
   projects:
     - name: eyelash_sofle
       url: https://github.com/Arawasu/zmk-sofle
