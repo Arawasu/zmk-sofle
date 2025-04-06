@@ -21,7 +21,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             /* ESC + solid mode (color must be set elsewhere) */
-            bindings = <&kp ESC &rgb_ug RGB_SLD>;
+            bindings = <&kp ESC &rgb_sld>;
         };
 
         /* Pastel blue */
@@ -29,7 +29,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             /* ESC + solid mode (color must be set elsewhere) */
-            bindings = <&kp ESC &rgb_ug RGB_SLD>;
+            bindings = <&kp ESC &rgb_sld>;
         };
 
         /* Pastel red */
@@ -37,7 +37,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             /* ESC + solid mode (color must be set elsewhere) */
-            bindings = <&kp ESC &rgb_ug RGB_SLD>;
+            bindings = <&kp ESC &rgb_sld>;
         };
 
         /* hold-tap for mo1 */
@@ -132,8 +132,9 @@
         &trans &trans &trans &trans &kp LBRC &kp RBRC
 
         /* Row 4 */
-        &trans &rgb_ug RGB_OFF &rgb_ug RGB_ON &rgb_ug RGB_EFF &rgb_ug RGB_EFR &rgb_ug RGB_SPI
-        &mmv MOVE_RIGHT &rgb_ug RGB_BRI &rgb_ug RGB_BRD &kp INSERT &to 0 &to 1 &to 2
+        /* Replacing &rgb_ug with direct behaviors like &rgb_off, &rgb_on, etc. */
+        &trans &rgb_off &rgb_on &rgb_eff &rgb_efr &rgb_spi
+        &mmv MOVE_RIGHT &rgb_bri &rgb_brd &kp INSERT &to 0 &to 1 &to 2
 
         /* Row 5 */
         &kp C_MUTE &trans &trans &trans &trans &trans
