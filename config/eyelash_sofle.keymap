@@ -13,14 +13,14 @@
 
 / {
     // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-    // ┃ Macro Behaviors for ESC + Pastel Colors            ┃
+    // ┃ Macro Behaviors for ESC + Pastel Colors             ┃
     // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
     behaviors {
         // Pastel purple
         rgb_esc_purple: rgb_esc_purple {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            // => Esc, set solid color mode, then pastel purple HSV(275, 50, 60)
+            // Esc, set solid color mode, then pastel purple HSV 275 50 60
             bindings = <&kp ESC &rgb_ug RGB_SLD &rgb_ug RGB_HSV 275 50 60>;
         };
 
@@ -28,7 +28,7 @@
         rgb_esc_blue: rgb_esc_blue {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            // => Esc, set solid color mode, then pastel blue HSV(210, 50, 60)
+            // Esc, set solid color mode, then pastel blue HSV 210 50 60
             bindings = <&kp ESC &rgb_ug RGB_SLD &rgb_ug RGB_HSV 210 50 60>;
         };
 
@@ -36,23 +36,21 @@
         rgb_esc_red: rgb_esc_red {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            // => Esc, set solid color mode, then pastel red HSV(0, 50, 60)
+            // Esc, set solid color mode, then pastel red HSV0 50 60
             bindings = <&kp ESC &rgb_ug RGB_SLD &rgb_ug RGB_HSV 0 50 60>;
         };
 
-        // Example hold-tap for mo(1):
+        // hold-tap for mo1
         hold_mo_1: hold_mo_1 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            // hold = mo(1), tap = nothing
+            // hold is mo1, tap is nothing
             bindings = <&mo 1 &trans>;
         };
     };
 };
-
-#include <behaviors.dtsi> // If you have other behaviors in a separate file, include them here
 
 / {
   scroll_encoder: scroll_encoder {
@@ -88,11 +86,11 @@
     compatible = "zmk,keymap";
 
     // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-    // ┃ BASE (layer_ZERO)                   ┃
+    // ┃ BASE layer_ZERO                      ┃
     // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
     layer_ZERO {
       bindings = <
-        // Row 1 -> Normal ESC here
+        // Row 1
         &kp ESC &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp UP_ARROW
         &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BACKSPACE
 
@@ -117,11 +115,11 @@
     };
 
     // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-    // ┃ NAV (layer_ONE) -> Pastel Purple ESC ┃
+    // ┃ NAV layer_ONE -> Pastel Purple ESC   ┃
     // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
     layer_ONE {
       bindings = <
-        // Row 1 -> Pastel purple ESC
+        // Row 1
         &rgb_esc_purple &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &mmv MOVE_UP
         &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F12
 
@@ -146,11 +144,11 @@
     };
 
     // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-    // ┃ ONE (layer_TWO) -> Pastel Blue ESC   ┃
+    // ┃ ONE layer_TWO -> Pastel Blue ESC     ┃
     // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
     layer_TWO {
       bindings = <
-        // Row 1 -> Pastel blue ESC
+        // Row 1
         &rgb_esc_blue &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &mmv MOVE_UP
         &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &trans
 
@@ -175,11 +173,11 @@
     };
 
     // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-    // ┃ TWO (layer_THREE) -> Pastel Red ESC  ┃
+    // ┃ TWO layer_THREE -> Pastel Red ESC    ┃
     // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
     layer_THREE {
       bindings = <
-        // Row 1 -> Pastel red ESC
+        // row 1
         &rgb_esc_red &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &mmv MOVE_UP
         &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &trans
 
