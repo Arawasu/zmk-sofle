@@ -76,7 +76,7 @@
         &trans &trans &trans &trans &kp LBRC &kp RBRC
 
         &trans &trans &trans &trans &trans &trans
-        &mmv MOVE_RIGHT &trans &trans &kp INSERT &to 0 &to 1 &to 2
+        &mmv MOVE_RIGHT &trans &trans &trans &to 0 &to 2 &to 3
 
         &kp C_MUTE &trans &trans &trans &trans &trans
         &trans &trans &trans &trans &trans &trans
@@ -97,7 +97,7 @@
         &trans &trans &trans &trans &trans &trans
 
         &trans &trans &trans &trans &trans &trans &mmv MOVE_RIGHT
-        &trans &trans &trans &to 0 &to 1 &trans
+        &trans &trans &trans &to 0 &trans &to 3
 
         &trans &trans &trans &trans &trans &mkp LCLK
         &trans &trans &trans &trans &trans &trans
@@ -118,7 +118,7 @@
         &trans &trans &trans &trans &trans &trans
 
         &trans &trans &trans &trans &trans &trans &mmv MOVE_RIGHT
-        &trans &trans &trans &to 0 &to 1 &trans
+        &trans &trans &trans &to 0 &to 2 &trans
 
         &trans &trans &trans &trans &trans &mkp LCLK
         &trans &trans &trans &trans &trans &trans
