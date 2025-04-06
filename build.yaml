@@ -1,8 +1,7 @@
 ---
 modules:
-  - name: zmk
-    path: zmk
-  - path: modules/zmk-nice-oled
+  - name: zmk-nice-oled
+    path: modules/zmk-nice-oled
 
 include:
   - board: eyelash_sofle_left
