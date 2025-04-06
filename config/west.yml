@@ -6,8 +6,8 @@ manifest:
     - name: gpeye
       url-base: https://github.com/GPeye
 
-    - name: mctechnology17
-      url-base: https://github.com/mctechnology17
+    - name: Arawasu
+      url-base: https://github.com/Arawasu
 
   projects:
     - name: eyelash_sofle
@@ -24,7 +24,7 @@ manifest:
       import: app/west.yml
 
     - name: zmk-nice-oled
-      remote: mctechnology17
+      remote: Arawasu
       revision: main
 
   self:
