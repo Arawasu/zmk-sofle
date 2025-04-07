@@ -11,44 +11,6 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-  behaviors {
-    ctrl_c_macro: ctrl_c_macro {
-      compatible = "zmk,behavior-macro";
-      label = "Ctrl C";
-      #binding-cells = <0>;
-      bindings = <
-        &macro_press &kp LC
-        &macro_tap   &kp C
-        &macro_release &kp LC
-      >;
-    };
-
-    ctrl_v_macro: ctrl_v_macro {
-      compatible = "zmk,behavior-macro";
-      label = "Ctrl V";
-      #binding-cells = <0>;
-      bindings = <
-        &macro_press &kp LC
-        &macro_tap   &kp V
-        &macro_release &kp LC
-      >;
-    };
-
-    ctrl_a_macro: ctrl_a_macro {
-      compatible = "zmk,behavior-macro";
-      label = "Ctrl A";
-      #binding-cells = <0>;
-      bindings = <
-        &macro_press &kp LC
-        &macro_tap   &kp A
-        &macro_release &kp LC
-      >;
-    };
-  };
-};
-
-
-/ {
   combos {
     combo_capslock {
       timeout-ms = <30>;
@@ -58,20 +20,16 @@
 
     combo_ctrl_c {
       timeout-ms = <30>;
-      key-positions = <28 29>; // S + D
-      bindings = <&ctrl_c_macro>;
+      key-positions = <28 29>; // Adjust to your actual key positions
+      bindings = <&kp LC(C)>;
+      layers = <0>; // Optional: only on BASE
     };
 
     combo_ctrl_v {
       timeout-ms = <30>;
-      key-positions = <29 30>; // D + F
-      bindings = <&ctrl_v_macro>;
-    };
-
-    combo_ctrl_a {
-      timeout-ms = <30>;
-      key-positions = <30 31>; // F + G
-      bindings = <&ctrl_a_macro>;
+      key-positions = <29 30>; // Adjust as needed
+      bindings = <&kp LC(V)>;
+      layers = <0>;
     };
   };
 };
