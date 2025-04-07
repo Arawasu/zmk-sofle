@@ -18,16 +18,23 @@
       bindings = <&kp CAPS>;
     };
 
+    combo_ctrl_a {
+      timeout-ms = <30>;
+      key-positions = <29 30>; // A + S
+      bindings = <&kp LC(A)>;
+      layers = <0>;
+    };
+
     combo_ctrl_c {
       timeout-ms = <30>;
-      key-positions = <28 29>; // Adjust to your actual key positions
+      key-positions = <30 31>; // S + D
       bindings = <&kp LC(C)>;
-      layers = <0>; // Optional: only on BASE
+      layers = <0>;
     };
 
     combo_ctrl_v {
       timeout-ms = <30>;
-      key-positions = <29 30>; // Adjust as needed
+      key-positions = <31 32>; // D + F
       bindings = <&kp LC(V)>;
       layers = <0>;
     };
