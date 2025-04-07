@@ -15,7 +15,7 @@
     combo_capslock {
       timeout-ms = <30>;
       key-positions = <39 51>;
-      bindings = <&kp CAPS_LOCK>;
+      bindings = <&kp CAPS>;
     };
 
     combo_ctrl_c {
