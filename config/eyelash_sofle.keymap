@@ -20,21 +20,21 @@
 
     combo_ctrl_a {
       timeout-ms = <30>;
-      key-positions = <29 30>; // A + S
+      key-positions = <27 28>; // A + S
       bindings = <&kp LC(A)>;
       layers = <0>;
     };
 
     combo_ctrl_c {
       timeout-ms = <30>;
-      key-positions = <30 31>; // S + D
+      key-positions = <28 29>; // S + D
       bindings = <&kp LC(C)>;
       layers = <0>;
     };
 
     combo_ctrl_v {
       timeout-ms = <30>;
-      key-positions = <31 32>; // D + F
+      key-positions = <29 30>; // D + F
       bindings = <&kp LC(V)>;
       layers = <0>;
     };
