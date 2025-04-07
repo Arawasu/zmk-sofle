@@ -16,24 +16,37 @@
       compatible = "zmk,behavior-macro";
       label = "Ctrl C";
       #binding-cells = <0>;
-      bindings = <&kp LC(C)>;
+      bindings = <
+        &macro_press &kp LC
+        &macro_tap   &kp C
+        &macro_release &kp LC
+      >;
     };
 
     ctrl_v_macro: ctrl_v_macro {
       compatible = "zmk,behavior-macro";
       label = "Ctrl V";
       #binding-cells = <0>;
-      bindings = <&kp LC(V)>;
+      bindings = <
+        &macro_press &kp LC
+        &macro_tap   &kp V
+        &macro_release &kp LC
+      >;
     };
 
     ctrl_a_macro: ctrl_a_macro {
       compatible = "zmk,behavior-macro";
       label = "Ctrl A";
       #binding-cells = <0>;
-      bindings = <&kp LC(A)>;
+      bindings = <
+        &macro_press &kp LC
+        &macro_tap   &kp A
+        &macro_release &kp LC
+      >;
     };
   };
 };
+
 
 / {
   combos {
