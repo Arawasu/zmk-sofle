@@ -16,35 +16,35 @@
       compatible = "zmk,behavior-macro";
       label = "Prev Desktop";
       #binding-cells = <0>;
-      bindings = <&kp LC &kp LG &kp LEFT_ARROW>;
+      bindings = <&kp LC(LG(LEFT_ARROW))>;
     };
 
     sys_next_desktop: sys_next_desktop {
       compatible = "zmk,behavior-macro";
       label = "Next Desktop";
       #binding-cells = <0>;
-      bindings = <&kp LC &kp LG &kp RIGHT_ARROW>;
+      bindings = <&kp LC(LG(RIGHT_ARROW))>;
     };
 
     ctrl_c_macro: ctrl_c_macro {
       compatible = "zmk,behavior-macro";
       label = "Ctrl C";
       #binding-cells = <0>;
-      bindings = <&kp LC &kp C>;
+      bindings = <&kp LC(C)>;
     };
 
     ctrl_v_macro: ctrl_v_macro {
       compatible = "zmk,behavior-macro";
       label = "Ctrl V";
       #binding-cells = <0>;
-      bindings = <&kp LC &kp V>;
+      bindings = <&kp LC(V)>;
     };
 
     ctrl_a_macro: ctrl_a_macro {
       compatible = "zmk,behavior-macro";
       label = "Ctrl A";
       #binding-cells = <0>;
-      bindings = <&kp LC &kp A>;
+      bindings = <&kp LC(A)>;
     };
   };
 };
