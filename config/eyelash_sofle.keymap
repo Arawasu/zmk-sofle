@@ -12,30 +12,6 @@
 
 / {
   behaviors {
-    sys_prev_desktop: sys_prev_desktop {
-      compatible = "zmk,behavior-macro";
-      label = "Prev Desktop";
-      #binding-cells = <0>;
-      bindings = <
-        &macro_tap
-        &kp LC
-        &kp LG
-        &kp LEFT_ARROW
-      >;
-    };
-
-    sys_next_desktop: sys_next_desktop {
-      compatible = "zmk,behavior-macro";
-      label = "Next Desktop";
-      #binding-cells = <0>;
-      bindings = <
-        &macro_tap
-        &kp LC
-        &kp LG
-        &kp RIGHT_ARROW
-      >;
-    };
-    
     ctrl_c_macro: ctrl_c_macro {
       compatible = "zmk,behavior-macro";
       label = "Ctrl C";
@@ -209,7 +185,7 @@
         &kp ESC &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &mmv MOVE_UP
         &kp F6 &kp F7 &kp F8 &kp F9 &kp F12 &kp DEL
 
-        &trans &sys_prev_desktop &kp UP &sys_next_desktop &trans &trans &trans
+        &trans &kp LC(LG(LEFT_ARROW)) &kp UP &kp LC(LG(RIGHT_ARROW)) &trans &trans &trans
         &trans &trans &trans &trans &kp UNDER &kp PLUS
 
         &trans &kp LEFT &kp DOWN &kp RIGHT &trans &trans &trans
