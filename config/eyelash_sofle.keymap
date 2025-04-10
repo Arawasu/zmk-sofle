@@ -33,7 +33,17 @@
 //							            			           │     19      │
 //              									           └─────────────┘
 
-#define HYPER &kp RS(RA(RC(RIGHT_GUI)))
+/ {
+    macros {
+        hyper_macro: hyper_m {
+            label = "HYPER";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RSHFT &kp RALT &kp RCTRL &kp RGUI>; // Press all the modifiers
+            // Use LEFT modifiers if preferred: <&kp LSHFT &kp LALT &kp LCTRL &kp LGUI>;
+        };
+    };
+};
 
 / {
   combos {
@@ -130,7 +140,7 @@ layer_ZERO {
     //  53          54          55          56          57            58
         &kp LGUI    &kp LCTRL   &mo 4       &kp SPACE   &kp ESC       &kp A
     //  59          60          61          62          63
-        &HYPER      &kp ENTER   &mo 1       &kp LGUI    &kp A
+        &hyper_m    &kp ENTER   &mo 1       &kp LGUI    &kp A
 
   >;
 
